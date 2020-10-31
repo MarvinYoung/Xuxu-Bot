@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-// const {token,prefix} = require('./config.json');
-
 
 client.on('ready',()=>{
     console.log(`Logged on as ${client.user.tag}`)
