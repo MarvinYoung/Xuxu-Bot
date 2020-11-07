@@ -5,7 +5,7 @@ const updatemember = () =>{
   const channelId = '774437115286126602';
   const guild = client.guilds.cache.get('611908098780561441');
   const channel = guild.channels.cache.get(channelId);
-  channel.setName(`Members: ${guild.memberCount.toLocaleString()}`)
+  channel.setName(`Members : ${guild.memberCount.toLocaleString()}`)
 }
 
 client.on('ready',()=>{
