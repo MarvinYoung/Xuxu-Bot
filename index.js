@@ -1,16 +1,17 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
-client.on('ready',()=>{
-    console.log(`Logged on as ${client.user.tag}`)
-})
-
 const updatemember = () =>{
   const channelId = '774437115286126602';
   const guild = client.guilds.cache.get('611908098780561441');
   const channel = guild.channels.cache.get(channelId);
   channel.setName(`Members: ${guild.memberCount.toLocaleString()}`)
 }
+
+client.on('ready',()=>{
+    console.log(`Logged on as ${client.user.tag}`)
+    updatemember()
+})
 
 client.on('guildMemberAdd',(member)=>{
   updatemember()
